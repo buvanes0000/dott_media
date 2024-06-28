@@ -1,0 +1,129 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const ServicesWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+`;
+
+const Card = styled.div`
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+`;
+
+const CardHeader = styled.div`
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  font-size: 1.2em;
+`;
+
+const CardBody = styled.div`
+  padding: 20px;
+`;
+
+const Price = styled.div`
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #333;
+`;
+
+const Description = styled.div`
+  margin: 10px 0;
+  color: #666;
+`;
+
+const Button = styled.button`
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const Services = () => {
+  return (
+    <ServicesWrapper>
+      <Card>
+        <CardHeader>Social Media Ad Service (1 Month)</CardHeader>
+        <CardBody>
+          <Price>₹15,000</Price>
+          <Description>Includes complete ad running and daily post creation for 1 month.</Description>
+          <Button>Choose Plan</Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardHeader>Social Media Ad Service (15 Days)</CardHeader>
+        <CardBody>
+          <Price>₹8,000</Price>
+          <Description>Includes complete ad running and daily post creation for 15 days.</Description>
+          <Button>Choose Plan</Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardHeader>Social Media Ad Service (1 Week)</CardHeader>
+        <CardBody>
+          <Price>₹4,500</Price>
+          <Description>Includes complete ad running and daily post creation for 1 week.</Description>
+          <Button>Choose Plan</Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardHeader>Basic Website Design</CardHeader>
+        <CardBody>
+          <Price>₹6,000</Price>
+          <Description>Multiple page basic website design.</Description>
+          <Button>Choose Plan</Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardHeader>E-commerce Website</CardHeader>
+        <CardBody>
+          <Price>₹15,000</Price>
+          <Description>Full-featured e-commerce website design.</Description>
+          <Button>Choose Plan</Button>
+        </CardBody>
+      </Card>
+
+      <Card>
+        <CardHeader>Mega Pack</CardHeader>
+        <CardBody>
+          <Price>₹30,000</Price>
+          <Description>Includes 1 month ad service and basic website design.</Description>
+          <Button>Choose Plan</Button>
+        </CardBody>
+      </Card>
+
+      {/* Add more custom service packages here */}
+    </ServicesWrapper>
+  );
+};
+
+export default Services;
