@@ -103,6 +103,18 @@ const ProjectDescription = styled.p`
   color: #666;
 `;
 
+const ProjectLink = styled.a`
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ff6b81;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const About = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -117,12 +129,14 @@ const About = () => {
   ];
 
   const webProjects = [
-    { id: 1, image: webImage1, title: "Project 1: E-commerce Website", description: "We developed a sleek and user-friendly e-commerce website for a retail client. The website featured a robust product catalog, secure checkout process, and responsive design." },
-    { id: 2, image: webImage2, title: "Project 2: Portfolio Website", description: "Our team created a stunning portfolio website for a freelance photographer. The website showcased the photographer's work and included a contact form for booking inquiries." },
+    { id: 1, image: webImage1, title: "Project 1: E-commerce Website", description: "We developed a sleek and user-friendly e-commerce website for a retail client. The website featured a robust product catalog, secure checkout process, and responsive design.", url: "https://example.com/ecommerce" },
+    { id: 2, image: webImage2, title: "Project 2: Portfolio Website", description: "Our team created a stunning portfolio website for a freelance photographer. The website showcased the photographer's work and included a contact form for booking inquiries.", url: "https://example.com/portfolio" },
     { id: 3, image: webImage3, title: "Project 3: Corporate Website", description: "We designed a professional corporate website for a consulting firm. The website included detailed service pages, team profiles, and a blog section." },
     { id: 4, image: webImage4, title: "Project 4: Non-Profit Website", description: "This project involved developing a website for a non-profit organization. The website featured information about the organization's mission, upcoming events, and donation options." },
     { id: 5, image: webImage5, title: "Project 5: Blog Website", description: "We created a blog website for a lifestyle blogger. The website included various blog categories, a search functionality, and social media integration." },
   ];
+
+  const recentWebProjects = webProjects.filter(project => project.url); // Filter projects that have a URL
 
   return (
     <AboutContainer>
@@ -151,9 +165,24 @@ const About = () => {
         </ProjectGrid>
       </Section>
       <Section>
-        <Title>Website Projects</Title>
+        <Title>Recent Web Development Projects</Title>
         <ProjectGrid>
-          {webProjects.map((project, index) => (
+          {recentWebProjects.map((project, index) => (
+            <ProjectCard key={project.id} data-aos={index % 2 === 0 ? "fade-up" : "fade-down"}>
+              <ProjectImage src={project.image} alt={project.title} />
+              <ProjectContent>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectDescription>{project.description}</ProjectDescription>
+                <ProjectLink href={project.url} target="_blank" rel="noopener noreferrer">Visit</ProjectLink>
+              </ProjectContent>
+            </ProjectCard>
+          ))}
+        </ProjectGrid>
+      </Section>
+      <Section>
+        <Title>Other Web Development Projects</Title>
+        <ProjectGrid>
+          {webProjects.filter(project => !project.url).map((project, index) => (
             <ProjectCard key={project.id} data-aos={index % 2 === 0 ? "fade-up" : "fade-down"}>
               <ProjectImage src={project.image} alt={project.title} />
               <ProjectContent>
@@ -164,8 +193,8 @@ const About = () => {
           ))}
         </ProjectGrid>
       </Section>
-      <Testimonial/>
-      <SocialMediaNav/>
+      <Testimonial />
+      <SocialMediaNav />
     </AboutContainer>
   );
 };

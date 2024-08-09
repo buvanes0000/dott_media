@@ -1,0 +1,78 @@
+/* src/Namebar.module.css */
+
+.namebar {
+    background: #000000d9;
+   
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    color: #fff;
+  }
+  
+  .name {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .contactContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .contactItem:hover {
+    color: #ff6b81;
+    transform: translateY(-3px);
+  }
+  
+  .icon {
+    margin-right: 8px;
+  }
+  
+  .contactText {
+    font-size: 1rem;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .namebar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px 24px;
+    }
+  
+    .logoContainer, .contactContainer {
+      margin-bottom: 10px;
+    }
+  
+    .contactItem {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+  }
+  

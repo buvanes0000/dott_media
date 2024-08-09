@@ -10,6 +10,7 @@ import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
 import Footer from './components/Footer.jsx';
 import Contact from './pages/Contact.jsx';
+import Namebar from './components/Namebar.jsx';
 
 const AppContent = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const AppContent = () => {
 
   return (
     <>
+  
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

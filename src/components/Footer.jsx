@@ -110,13 +110,13 @@ const Footer = () => {
         </FooterSection>
         <FooterSection>
           <SectionTitle>Contact Us</SectionTitle>
-          <SectionText>Email: info@yourcompany.com</SectionText>
-          <SectionText>Phone: +123 456 7890</SectionText>
+          <SectionText>Email: dottmediatn@gmail.com</SectionText>
+          <SectionText>Phone: +91 63741 49044</SectionText>
           <SocialIcons>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
+
+            <a href="https://www.instagram.com/dottmediatn?igsh=YzljYTk1ODg3Zg==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+           
           </SocialIcons>
         </FooterSection>
       </FooterContent>

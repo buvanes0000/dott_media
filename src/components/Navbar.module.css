@@ -1,14 +1,43 @@
-/* General navbar styles */
+/* src/Navbar.module.css */
+
 .navbar {
   background: #f9f9f9;
-  height: 80px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  border: 1px solid #33333368;
+  border-bottom: 1px solid #33333368;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1000;
+  opacity: 1;
+  transform: translateY(0);
+}
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-in-out forwards;
+}
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  width: 90px !important;
+  height: 70px !important;
+  object-fit: contain;
 }
 
 .navbarContainer {
@@ -24,17 +53,19 @@
 .navbarLogo {
   color: #ff6b81;
   justify-self: start;
+  padding: 10px;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;
   display: flex;
+  background-color: #433f3f;
   align-items: center;
+  border-radius: 50%;
 }
 
 .menuIcon {
   display: none;
   color: #ff6b81;
-
 }
 
 .navMenu {
@@ -56,22 +87,19 @@
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  transition: all 0.5s linear; 
-
+  transition: all 0.5s linear;
 }
 
 .navLinks:hover {
   color: #3333338f;
-letter-spacing: 3px;
- 
+  letter-spacing: 3px;
 }
 
 .active {
-  background-color:  #ff6b81;;
+  background-color: #ff6b81;
   color: #ffff;
-border-radius: 5rem;
-  padding:4px 15px;
-  
+  border-radius: 5rem;
+  padding: 4px 15px;
 }
 
 /* Mobile styles */
@@ -86,13 +114,14 @@ border-radius: 5rem;
     cursor: pointer;
     color: #ff6b81;
   }
+
   .active {
     background-color: #fff;
     color: #929AAB;
-  border-radius: 0;
-    padding:10px 15px;
+    border-radius: 0;
+    padding: 10px 15px;
   }
-  
+
   .navMenu {
     display: flex;
     flex-direction: column;
@@ -128,7 +157,7 @@ border-radius: 5rem;
   }
 
   .navLinks:hover {
-    background-color:  #ff6b81;
+    background-color: #ff6b81;
     border-radius: 0;
   }
 }

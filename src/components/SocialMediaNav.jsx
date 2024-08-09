@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const MiniIconContainer = styled.div`
@@ -132,7 +132,7 @@ const SocialMediaNav = () => {
 
   const icons = [
     { href: "https://www.facebook.com", icon: faFacebookF },
-    { href: "https://www.twitter.com", icon: faTwitter },
+    { href: "https://wa.me/+916374149044", icon: faWhatsapp },
     { href: "https://www.instagram.com", icon: faInstagram }
   ];
 
